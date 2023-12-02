@@ -1,0 +1,31 @@
+# Bloop
+.bloop/
+
+# Intellij
+.idea/
+*.iws
+.idea_modules/
+
+# Metals
+.metals/
+**/project/metals.sbt
+
+# sbt
+.bsp/
+target/
+lib_managed/
+src_managed/
+
+# Scala
+*.class
+*.log
+
+# Ammonite and IntelliJ worksheets
+.worksheet
+.worksheet.sc
+
+# VS Code
+.vscode/
+
+# gcp credentials files created by GHA
+gha-creds-*.json
