@@ -65,9 +65,9 @@ object Day3 extends App {
           (r3l, rowIndex, i),
           (r3c, rowIndex, i),
           (r3r, rowIndex, i),
-        )
+        ).filterNot(_._1 == 0)
       } else
-        Set((0, 0, 0))
+        Set.empty
     }.toSet
   }
 
@@ -108,8 +108,17 @@ object Day3 extends App {
     }.toSet
   }
 
-  println(s"part1 = ${rowIndices.flatMap(parseRows_part1).distinct.map(_._1).sum}") // 550934
+  println(s"part1 = ${rowIndices.flatMap(parseRows_part1).map(_._1).sum}") // 550934
   println(s"part2 = ${rowIndices.flatMap(parseRows_part2).sum}") // 81997870
+
+  def part1: Int = {
+    for {
+      ri <- rowIndices
+      partNumbersTuple <- parseRows_part1(ri)
+    } yield partNumbersTuple
+  }.map(_._1).sum
+
+  println(part1)
 
   source.close()
 }
