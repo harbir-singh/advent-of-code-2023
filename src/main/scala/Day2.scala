@@ -66,7 +66,7 @@ object Day2 extends App {
       .map(_._1)
       .sum
 
-  println(s"part1= $part1")
+  println(s"part1= $part1") // 2913
 
   private val part2 =
     input
@@ -80,6 +80,6 @@ object Day2 extends App {
       }
       .sum
 
-  println(s"part2= $part2")
+  println(s"part2= $part2") // 55593
 
 }

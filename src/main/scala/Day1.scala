@@ -9,7 +9,7 @@ object Day1 extends App {
   private def parseRow(s: String): Int =
     (s.find(_.isDigit).fold(0)(_.asDigit) * 10) + s.findLast(_.isDigit).fold(0)(_.asDigit)
 
-  println(s"part1 = ${input.map(parseRow).sum}")
+  println(s"part1 = ${input.map(parseRow).sum}") // 53386
 
   private def parseRow2(str: String): Int = {
     val s = str.toLowerCase
@@ -68,6 +68,6 @@ object Day1 extends App {
 //  println(parseRow2("zoneight"))
 //  println(parseRow2("pseven3threeeightseven"))
 
-  println(s"part2 = ${input.map(parseRow2).sum}")
+  println(s"part2 = ${input.map(parseRow2).sum}") // 53312
 
 }

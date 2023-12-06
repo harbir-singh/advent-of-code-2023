@@ -5,6 +5,7 @@ object Day3 extends App {
 
   val source = Source.fromFile("src/main/resources/Day3.input")
   val input: List[String] = source.getLines.toList
+  source.close()
   // indices without first and last rows
   val rowIndices: List[Int] = (1 to input.size - 2).toList
 
@@ -110,15 +111,4 @@ object Day3 extends App {
 
   println(s"part1 = ${rowIndices.flatMap(parseRows_part1).map(_._1).sum}") // 550934
   println(s"part2 = ${rowIndices.flatMap(parseRows_part2).sum}") // 81997870
-
-  def part1: Int = {
-    for {
-      ri <- rowIndices
-      partNumbersTuple <- parseRows_part1(ri)
-    } yield partNumbersTuple
-  }.map(_._1).sum
-
-  println(part1)
-
-  source.close()
 }
